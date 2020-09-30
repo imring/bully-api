@@ -20,6 +20,8 @@ public:
     CMatrix *GetTransform();
     void AllocateStaticMatrix();
     void AllocateMatrix();
+    void SetMatrix(const CMatrix &mat, bool bAllocMatrix);
+    CMatrixLink *GetMatrix();
 
     static void InitMatrixArray();
 };

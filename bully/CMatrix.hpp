@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CVector.hpp"
+#include "CQuaternion.hpp"
 
 namespace bullyapi {
 
@@ -26,9 +27,16 @@ public:
     void SetRotateX(float rot);
     void SetRotateY(float rot);
     void SetRotateZ(float rot);
+    void SetRotate(const CVector &vec);
+    void SetRotate(const CQuaternion &quat);
+    void RotateX(float rot);
+    void RotateY(float rot);
+    void RotateZ(float rot);
+    void Rotate(const CVector &vec);
     void UpdateRw(RwMatrix *mat);
 
     void operator=(const CMatrix &rvalue);
+    void operator*=(const CMatrix &rvalue);
 };
 
 };

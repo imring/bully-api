@@ -7,6 +7,9 @@ namespace bullyapi {
 
 class CSimpleTransform {
 public:
+    CSimpleTransform() = default;
+    CSimpleTransform(const CMatrix *mat); // maybe wrong
+
     CVector m_vPosn;
     float   m_fHeading;
 

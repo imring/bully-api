@@ -36,10 +36,38 @@ void CMatrix::SetRotateZ(float rot) {
     CallMethod<0x412CE0>(this, rot);
 }
 
+void CMatrix::SetRotate(const CVector &vec) {
+    CallMethod<0x412D00>(this, vec);
+}
+
+void CMatrix::SetRotate(const CQuaternion &quat) {
+    CallMethod<0x412E40>(this, quat);
+}
+
+void CMatrix::RotateX(float rot) {
+    CallMethod<0x413020>(this, rot);
+}
+
+void CMatrix::RotateY(float rot) {
+    CallMethod<0x413120>(this, rot);
+}
+
+void CMatrix::RotateZ(float rot) {
+    CallMethod<0x413220>(this, rot);
+}
+
+void CMatrix::Rotate(const CVector &vec) {
+    CallMethod<0x413320>(this, vec);
+}
+
 void CMatrix::UpdateRw(RwMatrix *mat) {
     CallMethod<0x413A70>(this, mat);
 }
 
 void CMatrix::operator=(const CMatrix &rvalue) {
     CallMethod<0x412720>(this, rvalue);
+}
+
+void CMatrix::operator*=(const CMatrix &rvalue) {
+    CallMethod<0x412800>(this, rvalue);
 }

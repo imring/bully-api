@@ -32,6 +32,14 @@ void CPlaceable::AllocateMatrix() {
     CallMethod<0x46DDF0>(this);
 }
 
+void CPlaceable::SetMatrix(const CMatrix &mat, bool bAllocMatrix) {
+    CallMethod<0x46DE90>(this, mat, bAllocMatrix);
+}
+
+CMatrixLink *CPlaceable::GetMatrix() {
+    return CallMethod<0x8B6120, CMatrixLink *>(this);
+}
+
 void CPlaceable::InitMatrixArray() {
     Call<0x46DBF0>();
 }
